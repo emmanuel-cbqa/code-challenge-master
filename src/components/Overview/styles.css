@@ -1,0 +1,35 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
+  margin: 10%;
+}
+
+.row-grid {
+  display: grid;
+  grid-template-columns: 10% auto;
+  border-bottom: 1px solid #e4d6d6;
+  cursor: pointer;
+}
+
+.icon {
+  padding-top: 20px;
+}
+
+.GroupName {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.GroupName span {
+  font-size: 15px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: #93a7a0;
+}
+
+.task-item-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 30%;
+}
