@@ -1,13 +1,21 @@
 import React from 'react';
 import './styles.css';
-import { IncompleteIcon, CompletedIcon } from '../../icons';
+import { IncompleteIcon, CompletedIcon, LockedIcon } from '../../icons';
 
 const TaskItem = ({ task, taskIndex, completeTask }) => {
+  let icon;
+  if(task.completedAt){
+    icon = <CompletedIcon /> 
+  }else{
+    if(task.dependencyIds.length === 0)
+      icon = <IncompleteIcon/>
+    else icon = <LockedIcon/>
+  }
   return (
     <div className='container'>
       <div className='row' style={{ paddingTop: '3%' }}>
         <div className='col-1 taskIcon' onClick={() => completeTask(taskIndex)}>
-          {task.completedAt ? <CompletedIcon /> : <IncompleteIcon />}
+          {icon}
         </div>
         <div
           className='col-11'

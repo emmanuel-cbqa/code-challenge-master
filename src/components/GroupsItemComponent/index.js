@@ -11,6 +11,8 @@ function GroupItemComponent({
   setIsActive,
   setTasks,
 }) {
+  console.log(group);
+  
   const filterTasks = (groupName) => {
     console.log(groupName);
     setIsActive(false);
@@ -24,17 +26,10 @@ function GroupItemComponent({
           <div className='col-1'>
             <GroupIcon />
           </div>
-          {group.group === 'Purchases' ? (
-            <div className='col-11' onClick={() => filterTasks(group.group)}>
-              <p>Purchases</p>
+          <div className='col-11' onClick={() => filterTasks(group)}>
+              <p>{group}</p>
               <p>Task Summary</p>
             </div>
-          ) : (
-            <div className='col-11' onClick={() => filterTasks(group.group)}>
-              <p>Build Airplane</p>
-              <p>Task Summary</p>
-            </div>
-          )}
         </div>
         <div className='row underlined'></div>
       </div>
